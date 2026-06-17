@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KCD Texas Photos</title>
+  <style>
+    :root {
+      --bg: #0f0f10;
+      --surface: #17181b;
+      --surface-hover: #202227;
+      --text: #f5f5f5;
+      --muted: #b9bcc3;
+      --border: #2c2f36;
+      --accent: #7dd3fc;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .album-card {
+      display: block;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--text);
+      text-decoration: none;
+      transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    .album-card:hover,
+    .album-card:focus-visible {
+      background: var(--surface-hover);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .album-title {
+      margin: 0 0 6px;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .album-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .note {
+      margin-top: 28px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>KCD Texas Photos</h1>
+      <p>
+        Public event photo albums. Open an album to browse the gallery and click any photo to view the full image.
+      </p>
+    </header>
+
+    <section class="albums" aria-label="Photo albums">
+      <a class="album-card" href="./202604/">
+        <h2 class="album-title">202604 Album</h2>
+        <p class="album-meta">Photos sourced from <code>/public/202604/</code></p>
+      </a>
+
+      <a class="album-card" href="./202511/">
+        <h2 class="album-title">202511 Album</h2>
+        <p class="album-meta">Photos sourced from <code>/public/202511/</code></p>
+      </a>
+    </section>
+
+    <p class="note">
+      Tip: keep one folder in the bucket and one folder in the repo per album so the structure stays obvious.
+    </p>
+  </main>
+</body>
+</html>
