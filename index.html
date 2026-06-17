@@ -62,12 +62,12 @@
 
     .album-card {
       display: block;
-      padding: 18px;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
       color: var(--text);
       text-decoration: none;
+      overflow: hidden;
       transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
     }
 
@@ -77,6 +77,24 @@
       border-color: var(--accent);
       transform: translateY(-2px);
       outline: none;
+    }
+
+    .album-card:hover .album-thumb,
+    .album-card:focus-visible .album-thumb {
+      opacity: 0.88;
+    }
+
+    .album-thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--surface-hover);
+      transition: opacity 160ms ease;
+    }
+
+    .album-body {
+      padding: 14px 18px 16px;
     }
 
     .album-title {
@@ -102,7 +120,7 @@
   <main class="wrap">
     <header>
       <img class="logo" src="img/cn-valencia-logo.png" alt="Cloud Native Valencia logo">
-      <h1>KCD Texas Photos</h1>
+      <h1>Cloud Native Valencia Photos</h1>
       <p>
         Public event photo albums. Open an album to browse the gallery and click any photo to view the full image.
       </p>
@@ -110,13 +128,19 @@
 
     <section class="albums" aria-label="Photo albums">
       <a class="album-card" href="./202604/">
-        <h2 class="album-title">Cloud Native Valencia #4 - Spring Community Night</h2>
-        <p class="album-meta">Photos sourced from <code>/public/202604/</code></p>
+        <img class="album-thumb" src="https://kcdtexas-photos-prod.us-east-1.linodeobjects.com/public/202604/100_55250995478_l.jpg" alt="Preview of Cloud Native Valencia #4" loading="lazy" decoding="async">
+        <div class="album-body">
+          <h2 class="album-title">Cloud Native Valencia #4 - Spring Community Night</h2>
+          <p class="album-meta">Photos sourced from <code>/public/202604/</code></p>
+        </div>
       </a>
 
       <a class="album-card" href="./202511/">
-        <h2 class="album-title">Cloud Native Valencia #3 - You're on lightning talks + cTENcf Party</h2>
-        <p class="album-meta">Photos sourced from <code>/public/202511/</code></p>
+        <img class="album-thumb" src="https://kcdtexas-photos-prod.us-east-1.linodeobjects.com/public/202511/100_54976121229_l.jpg" alt="Preview of Cloud Native Valencia #3" loading="lazy" decoding="async">
+        <div class="album-body">
+          <h2 class="album-title">Cloud Native Valencia #3 - You're on lightning talks + cTENcf Party</h2>
+          <p class="album-meta">Photos sourced from <code>/public/202511/</code></p>
+        </div>
       </a>
     </section>
 
